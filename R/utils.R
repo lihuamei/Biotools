@@ -35,3 +35,18 @@ logTransform <- function(X) {
         (qx[2] > 0 && qx[2] < 1 && qx[4] > 1 && qx[4] < 2)
     return(!logBV)
 }
+
+#' Show running information.
+#' 
+#' @param Message needs to be shown.
+#' @param level Specify the output level of the message, 'INFO', 'WARN' or 'ERROR', default: 'INFO'.
+#' @param verbose Show running infos or not, default: TRUE.
+#' @examples
+#'
+#' logTransform(runif(n = 100, min = 1, max = 1000))
+
+showRunInfos <- function(msg, level = c('INFO', 'WARN', 'ERROR'), verbose = TRUE) {
+	level <- match.arg(level)
+	if (verbose) message(sprintf('>> [%s] %s', level, msg))
+	if (level == 'ERROR') stop()
+}
