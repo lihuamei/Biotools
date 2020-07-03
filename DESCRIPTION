@@ -11,5 +11,10 @@ Description: This is a custom tool for bioinformatics data anslysis, which can b
 License: GPL3
 Encoding: UTF-8
 LazyData: true
+Imports:
+	GEOquery,
+	dplyr,
+	hgu133a.db
 Suggests: 
     testthat
+RoxygenNote: 7.1.0
