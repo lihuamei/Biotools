@@ -9,9 +9,10 @@
 #' @export downGEODatasets
 #' @examples
 #' 
-#' exprs.lst <- downGEODatasets(geoIDs = c('GSE19830'), log2Trans = FALSE)
+#' exprsList <- downGEODatasets(geoIDs = c('GSE19830'), log2Trans = FALSE)
 
 downGEODatasets <- function(geoIDs, log2Trans = FALSE, verbose = TRUE) {
+	geoIDs <- unique(geoIDs)
 	sapply(geoIDs, function(gse) {
 		showRunInfos(msg = sprintf('Fetching %s', gse), level = 'INFO', verbose = verbose)
 		status <- try(gsets <- getGEO(gse, GSEMatrix = TRUE, AnnotGPL = TRUE))
@@ -31,3 +32,5 @@ downGEODatasets <- function(geoIDs, log2Trans = FALSE, verbose = TRUE) {
 	}) -> fetched.exprs
 	return(fetched.exprs)
 }
+
+
