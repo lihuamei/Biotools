@@ -17,7 +17,7 @@ downGEODatasets <- function(geoIDs, log2Trans = FALSE, verbose = TRUE) {
 		status <- try(gsets <- getGEO(gse, GSEMatrix = TRUE, AnnotGPL = TRUE))
 		
 		if (class(status) == 'try-error') {
-			showRunInfos(msg = sprintf('Fetching %s failed', gse), level = 'WARN', ...)
+			showRunInfos(msg = sprintf('Fetching %s failed', gse), level = 'WARN', verbose = verbose)
 			next
 		}
 		lapply(1 : length(gsets), function(idx){
