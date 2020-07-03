@@ -1,0 +1,15 @@
+Package: Biotools
+Title: Bioinformatics tools for data analysis.
+Version: 1.0.0
+Authors@R: 
+    person(given = "Huamei",
+           family = "Li",
+           role = c("aut", "cre"),
+           email = "230179525@seu.edu.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This is a custom tool for bioinformatics data anslysis, which can be downloaded and modified.
+License: GPL3
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat
