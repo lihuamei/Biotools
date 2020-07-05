@@ -1,8 +1,8 @@
 #' Download GEO datasets from Gene Expression Omnibus databse
 #'
-#' Download a list of GEO datasets from Gene Expression Omnibus databse.
+#' Download a list of microarray GEO datasets from Gene Expression Omnibus databse.
 #'
-#' @param geoIDs A vector of GSE accession number.
+#' @param geoIDs A vector of GSE accession number for microarray datasets downloading.
 #' @param verbose Show running infos or not, default: TRUE.
 #' @param log2Trans log2(X + 1) transfer for the expression data, default: FALSE.
 #' @return A list of downloaded gene expression profiles of each GSE accession number.
@@ -27,10 +27,8 @@ downGEODatasets <- function(geoIDs, log2Trans = FALSE, verbose = TRUE) {
 			ex <- exprs(gset)
 			logBool <- logTransform(ex)
 			if (log2Trans && !logBool) { ex[which(ex <= 0)] <- NaN; ex <- log2(1 + ex) }
-			return(ex)
+			return(list(expr = ex, anno = fData(gset)))
 		}) -> exprs
 	}) -> fetched.exprs
 	return(fetched.exprs)
 }
-
-

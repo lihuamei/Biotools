@@ -14,7 +14,8 @@ LazyData: true
 Depends:
     GEOquery,
     dplyr,
-    hgu133a.db,
+	hgu133plus2.db,
+	annotate,
 Suggests:
     devtools,
     roxygen2,
