@@ -50,3 +50,23 @@ showRunInfos <- function(msg, level = c('INFO', 'WARN', 'ERROR'), verbose = TRUE
 	if (verbose) message(sprintf('>> [%s] %s', level, msg))
 	if (level == 'ERROR') stop()
 }
+
+#' Create phenotype class matrix.
+#'
+#' @param snList A list of sample names.
+#' @return Phenotype class matrix, which rows represent the names of snList, columns represent sample names. When sample belongs to class A, the entry = 1, ortherwise, entry = 0.
+#' @ export createPhenotypeClass
+#' @examples
+#'
+#' createPhenotypeClass(list(A = c('S1', 'S2'), B = c('S3' 'S4'))) 
+
+createPhenotypeClass <- function(snList) {
+	unlist(snList, use.names = FALSE) %>% unique -> snVecs
+	matrix(0, nrow = length(snList), ncol = length(snVecs), dimnames = list(names(snList), snVecs)) -> phenotypeClass
+	for (pSn in names(snList)) {
+		for (sSn in snList[[pSn]]) {
+			phenotypeClass[pSn, sSn] <- 1
+		}
+	}
+	return(phenotypeClass)
+}
