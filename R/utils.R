@@ -41,9 +41,11 @@ logTransform <- function(X) {
 #' @param Message needs to be shown.
 #' @param level Specify the output level of the message, 'INFO', 'WARN' or 'ERROR', default: 'INFO'.
 #' @param verbose Show running infos or not, default: TRUE.
+#' @return NULL.
+#' @export showRunInfos
 #' @examples
 #'
-#' logTransform(runif(n = 100, min = 1, max = 1000))
+#' showRunInfos(msg = 'Test', level = 'INFO', verbose = TRUE)
 
 showRunInfos <- function(msg, level = c('INFO', 'WARN', 'ERROR'), verbose = TRUE) {
 	level <- match.arg(level)
