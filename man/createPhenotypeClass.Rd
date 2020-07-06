@@ -17,5 +17,5 @@ Create phenotype class matrix.
 }
 \examples{
 
-createPhenotypeClass(list(A = c('S1', 'S2'), B = c('S3' 'S4'))) 
+createPhenotypeClass(list(A = c('S1', 'S2'), B = c('S3', 'S4'))) 
 }

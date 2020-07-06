@@ -13,10 +13,13 @@ showRunInfos(msg, level = c("INFO", "WARN", "ERROR"), verbose = TRUE)
 
 \item{Message}{needs to be shown.}
 }
+\value{
+NULL.
+}
 \description{
 Show running information.
 }
 \examples{
 
-logTransform(runif(n = 100, min = 1, max = 1000))
+showRunInfos(msg = 'Test', level = 'INFO', verbose = TRUE)
 }
