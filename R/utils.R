@@ -38,7 +38,7 @@ logTransform <- function(X) {
 
 #' Show running information.
 #' 
-#' @param Message needs to be shown.
+#' @param msg Message needs to be shown.
 #' @param level Specify the output level of the message, 'INFO', 'WARN' or 'ERROR', default: 'INFO'.
 #' @param verbose Show running infos or not, default: TRUE.
 #' @return NULL.
