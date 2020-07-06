@@ -27,6 +27,7 @@ downMicroGEODatasets <- function(geoIDs, log2Trans = FALSE, verbose = TRUE) {
 			ex <- exprs(gset)
 			logBool <- logTransform(ex)
 			if (log2Trans && !logBool) { ex[which(ex <= 0)] <- NaN; ex <- log2(1 + ex) }
+			else if (!log2Trans && logBool) { ex <- 2^ex - 1}
 			return(list(expr = ex, anno = fData(gset)))
 		}) -> exprs
 	}) -> fetched.exprs
