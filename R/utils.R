@@ -58,7 +58,7 @@ showRunInfos <- function(msg, level = c('INFO', 'WARN', 'ERROR'), verbose = TRUE
 #' @ export createPhenotypeClass
 #' @examples
 #'
-#' createPhenotypeClass(list(A = c('S1', 'S2'), B = c('S3' 'S4'))) 
+#' createPhenotypeClass(list(A = c('S1', 'S2'), B = c('S3', 'S4'))) 
 
 createPhenotypeClass <- function(snList) {
 	unlist(snList, use.names = FALSE) %>% unique -> snVecs
