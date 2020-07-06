@@ -16,6 +16,8 @@ Depends:
     dplyr,
 	hgu133plus2.db,
 	annotate,
+	TCGAbiolinks,
+	SummarizedExperiment,
 Suggests:
     devtools,
     roxygen2,

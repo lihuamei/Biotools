@@ -6,12 +6,12 @@
 #' @param verbose Show running infos or not, default: TRUE.
 #' @param log2Trans log2(X + 1) transfer for the expression data, default: FALSE.
 #' @return A list of downloaded gene expression profiles of each GSE accession number.
-#' @export downGEODatasets
+#' @export downMicroGEODatasets
 #' @examples
 #' 
-#' exprsList <- downGEODatasets(geoIDs = c('GSE19830'), log2Trans = FALSE)
+#' exprsList <- downMicroGEODatasets(geoIDs = c('GSE19830'), log2Trans = FALSE)
 
-downGEODatasets <- function(geoIDs, log2Trans = FALSE, verbose = TRUE) {
+downMicroGEODatasets <- function(geoIDs, log2Trans = FALSE, verbose = TRUE) {
 	geoIDs <- unique(geoIDs)
 	sapply(geoIDs, function(gse) {
 		showRunInfos(msg = sprintf('Fetching %s', gse), level = 'INFO', verbose = verbose)
