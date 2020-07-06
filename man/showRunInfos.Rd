@@ -7,11 +7,11 @@
 showRunInfos(msg, level = c("INFO", "WARN", "ERROR"), verbose = TRUE)
 }
 \arguments{
+\item{msg}{Message needs to be shown.}
+
 \item{level}{Specify the output level of the message, 'INFO', 'WARN' or 'ERROR', default: 'INFO'.}
 
 \item{verbose}{Show running infos or not, default: TRUE.}
-
-\item{Message}{needs to be shown.}
 }
 \value{
 NULL.
