@@ -6,13 +6,16 @@
 \usage{
 downloadTcgaData(
   cancerTypes = getGDCprojects()$project_id[grepl("TCGA", getGDCprojects()$project_id)],
+  keep = FALSE,
   ...
 )
 }
 \arguments{
 \item{cancerTypes}{Specify the cancer types for downloading the genimic datasets from the TCGA database.}
 
-\item{...}{Other parameters can be obtained through GDCdownload and GDCquery functions.}
+\item{keep}{Keep downloaded files and directories or not, default: FALSE.}
+
+\item{...}{Other parameters can be obtained through GDCquery functions.}
 }
 \value{
 A list of download datasets for the given cancer types.
@@ -24,5 +27,5 @@ Fetch the genomic datasets for the given cancer type from TCGA database using th
 }
 \examples{
 
-downloadTcgaData(cancerTypes = c('TCGA-GBM'), data.category = 'Gene expression', data.type = 'Gene expression quantification', platform = 'Illumina HiSeq', file.type  = 'normalized_results', experimental.strategy = 'RNA-Seq', legacy = TRUE, directory = '.')
+results <- downloadTcgaData(cancerTypes = c('TCGA-GBM'), data.category = 'Gene expression', data.type = 'Gene expression quantification', platform = 'Illumina HiSeq', file.type  = 'normalized_results', experimental.strategy = 'RNA-Seq', legacy = TRUE)
 }
