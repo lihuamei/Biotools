@@ -55,7 +55,7 @@ showRunInfos <- function(msg, level = c('INFO', 'WARN', 'ERROR'), verbose = TRUE
 #'
 #' @param snList A list of sample names.
 #' @return Phenotype class matrix, which rows represent the names of snList, columns represent sample names. When sample belongs to class A, the entry = 1, ortherwise, entry = 0.
-#' @ export createPhenotypeClass
+#' @export createPhenotypeClass
 #' @examples
 #'
 #' createPhenotypeClass(list(A = c('S1', 'S2'), B = c('S3', 'S4'))) 
