@@ -72,3 +72,24 @@ createPhenotypeClass <- function(snList) {
 	}
 	return(phenotypeClass)
 }
+
+#  Read table file.
+#'
+#' @param tableFil Path of table file.
+#' @parsm rowNamesIdx Column number serve as row names.
+#' @param ... Other parameters access from fread of data.table package.
+#' @return Data.frame.
+#' @export readTableFile
+#' @examples
+#'
+#' readTableFile(filePath, rowNamesIdx = 1, header = TRUE)
+
+readTableFile <- function(tableFil, rowNamesIdx = NA, ...) {
+	fread(tableFil, ...) %>% data.frame -> df
+	if (!is.na(rowNamesIdx)) {
+		df[!duplicated(df[, rowNamesIdx]), ] -> df
+		rownames(df) <- df[, rowNamesIdx]
+		df <- df[, -rowNamesIdx]
+	}
+	return(df)
+}
